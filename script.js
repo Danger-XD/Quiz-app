@@ -55,6 +55,7 @@ let currentQuiz = 0;
 let score = 0;
 loadQuiz();
 
+// to load the elements of quiz
 function loadQuiz() {
   deselectAnswer();
   const currentQuestion = quiz[currentQuiz];
@@ -65,6 +66,7 @@ function loadQuiz() {
   d_text.innerHTML = currentQuestion.d;
 }
 
+// to select answer and pass it 
 function getSelected() {
   let answer = undefined;
   answerEls.forEach((answerEl) => {
@@ -75,11 +77,13 @@ function getSelected() {
   return answer;
 }
 
+// to clear selected radio button 
 function deselectAnswer() {
   answerEls.forEach((answerEl) => {
     answerEl.checked = false;
   });
 }
+
 
 submitBtn.addEventListener("click", () => {
   const answer = getSelected();
